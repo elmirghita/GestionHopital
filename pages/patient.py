@@ -2,10 +2,10 @@
 import streamlit as st
 
 # Import each module directly
-from pages.patients.add_patient import render_add_customer
-from pages.patients.update_patient import render_update_customer
-from pages.patients.delete_patient import render_delete_customer
-from pages.patients.display_patient import render_display_customers
+from pages.patients.add_patient import render_add_patient
+from pages.patients.update_patient import render_update_patient
+from pages.patients.delete_patient import render_delete_patient
+from pages.patients.display_patient import render_display_patient
 
 # Page configuration
 st.set_page_config(page_title="Gestion des Patients", layout="wide")
@@ -18,13 +18,13 @@ tab_new, tab_update, tab_delete, tab_display = st.tabs(
 
 # Render each tab from its module
 with tab_new:
-    render_add_customer()
+    render_add_patient()
 
 with tab_update:
-    render_update_customer()
+    render_update_patient()
 
 with tab_delete:
-    render_delete_customer()
+    render_delete_patient()
 
 with tab_display:
-    render_display_customers()
+    render_display_patient()
