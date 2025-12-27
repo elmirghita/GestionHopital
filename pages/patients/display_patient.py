@@ -4,7 +4,7 @@ import pandas as pd
 from pages.db import get_connection
 
 
-def render_display_customers():
+def render_display_patient():
     """Render the 'Display Patients' tab"""
     st.header("📋 Liste de tous les patients")
 

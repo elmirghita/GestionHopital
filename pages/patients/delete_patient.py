@@ -2,7 +2,7 @@
 import streamlit as st
 from pages.db import get_connection
 
-def render_delete_customer():
+def render_delete_patient():
     """Render the 'Delete Customer' tab"""
     st.header("🗑️ Supprimer un patient")
     
@@ -39,7 +39,6 @@ def render_delete_customer():
                 cursor.execute("DELETE FROM patient WHERE id_patient = %s", (patient_id,))
                 conn.commit()
                 st.error(f"✅ Client supprimé!")
-                st.rerun()
     except Exception as e:
         st.error(f"❌ Erreur: {e}")
     finally:

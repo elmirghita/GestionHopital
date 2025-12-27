@@ -2,7 +2,7 @@
 import streamlit as st
 from pages.db import get_connection
 
-def render_update_customer():
+def render_update_patient():
     """Render the 'Update Customer' tab"""
     st.header("✏️ Modifier les informations d'un client")
     

@@ -68,7 +68,6 @@ def render_update_admission():
 
             conn.commit()
             st.success("✅ Admission mise à jour")
-            st.rerun()
 
     except Exception as e:
         st.error(f"❌ Erreur : {e}")

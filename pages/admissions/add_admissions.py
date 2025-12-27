@@ -40,7 +40,7 @@ def render_add_admission():
         # Salles
         # =====================
         cursor.execute("""
-            SELECT num_salle, type_chambre
+            SELECT id_salle_hospitalisation, num_salle, type_chambre
             FROM salle_hospitalisation
             ORDER BY num_salle
         """)
@@ -50,16 +50,21 @@ def render_add_admission():
             st.warning("Aucune salle disponible")
             return
 
-        salle_options = {
-            f"Salle {num} - {type_}": id_salle
-            for num, type_ in salles
-        }
+        labels = []
+        salle_map = {}
+
+        for id_salle, num_salle, type_chambre in salles:
+            label = f"Salle {num_salle} ({type_chambre})"
+            labels.append(label)
+            salle_map[label] = id_salle
 
         selected_salle = st.selectbox(
             "🛏️ Salle d'hospitalisation",
-            salle_options.keys()
+            labels
         )
-        id_salle = salle_options[selected_salle]
+
+        id_salle = salle_map[selected_salle]
+
 
         # =====================
         # Motif
@@ -71,13 +76,12 @@ def render_add_admission():
         # =====================
         if st.button("💾 Enregistrer", type="primary"):
             cursor.execute("""
-                INSERT INTO admission (motif_admission, id_patient, id_salle)
+                INSERT INTO admission (motif_admission, id_patient, id_salle_hospitalisation)
                 VALUES (%s, %s, %s)
             """, (motif, id_patient, id_salle))
 
             conn.commit()
             st.success("✅ Admission enregistrée")
-            st.rerun()
 
     except Exception as e:
         st.error(f"❌ Erreur : {e}")
