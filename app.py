@@ -9,6 +9,7 @@ departement_page = st.Page("pages/departement.py", title="Departements", icon="�
 analytics_page = st.Page("pages/analytics.py", title="Data Analytics", icon="📈")
 admission_page = st.Page("pages/admissions.py", title="Admissions", icon="🎟️")
 salle_page = st.Page("pages/salle_hospitalisation.py", title="Salle Hospitalisation", icon="🏥")
+facture_page = st.Page("pages/facture.py", title="Facture", icon="💳")
 
 # Configure the navigation menu with the pages
 pg = st.navigation([
@@ -18,8 +19,8 @@ pg = st.navigation([
     medecin_page,
     specialite_page,
     departement_page,
-    analytics_page,
-    salle_page
-    
+    salle_page,
+    facture_page,
+    analytics_page
 ])
 pg.run()
