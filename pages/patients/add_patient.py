@@ -36,4 +36,4 @@ def render_add_patient():
                 if conn:
                     conn.close()
         elif submitted:
-            st.warning("⚠️ Veuillez remplir toute les champs")
+            st.warning("⚠️ Veuillez remplir tout les champs")
