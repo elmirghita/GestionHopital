@@ -38,7 +38,7 @@ def render_delete_patient():
             if confirm and st.button("Supprimer définitivement", type="secondary"):
                 cursor.execute("DELETE FROM patient WHERE id_patient = %s", (patient_id,))
                 conn.commit()
-                st.error(f"✅ Client supprimé!")
+                st.success(f"✅ Client supprimé!")
     except Exception as e:
         st.error(f"❌ Erreur: {e}")
     finally:
