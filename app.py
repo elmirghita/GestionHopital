@@ -22,11 +22,9 @@ pg = st.navigation([
     medecin_page,
     specialite_page,
     departement_page,
-    analytics_page,
-    admission_page,
     ordonnance_page,
     medicament_page,
-    ordonnance_medical_page
+    ordonnance_medical_page,
     salle_page,
     facture_page,
     analytics_page
