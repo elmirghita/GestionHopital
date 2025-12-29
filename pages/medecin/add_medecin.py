@@ -17,7 +17,7 @@ def render_add_medecin():
             specialite = st.text_input("specialite*", max_chars=15)
             departement = st.text_input("departement*", max_chars=20)
 
-        submitted = st.form_submit_button("Ajouter le patient", type="primary")
+        submitted = st.form_submit_button("Ajouter le medecin", type="primary")
 
         
     if submitted:
