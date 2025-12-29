@@ -98,7 +98,6 @@ def render_add_consultation():
 
             conn.commit()
             st.success("✅ Consultation ajoutée avec succès")
-            st.rerun()
 
     except Exception as e:
         conn.rollback()

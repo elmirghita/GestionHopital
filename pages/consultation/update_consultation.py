@@ -75,7 +75,7 @@ def render_update_consultation():
 
             conn.commit()
             st.success("✅ Consultation mise à jour")
-            st.rerun()
+
 
     except Exception as e:
         conn.rollback()

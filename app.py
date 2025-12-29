@@ -14,6 +14,7 @@ medicament_page = st.Page("pages/medicament.py", title="Medicaments", icon="💊
 ordonnance_medical_page = st.Page("pages/ordonnance_medical.py", title="Ordonnance Medical", icon="🩹")
 salle_page = st.Page("pages/salle_hospitalisation.py", title="Salle Hospitalisation", icon="🛏️")
 facture_page = st.Page("pages/facture.py", title="Facture", icon="💳")
+ligne_facture_page = st.Page("pages/ligne_facture.py", title="Ligne Facture", icon="📄")
 
 # Configure the navigation menu with the pages
 pg = st.navigation([
@@ -27,8 +28,10 @@ pg = st.navigation([
     medicament_page,
     ordonnance_medical_page,
     salle_page,
+    consultation_page,
     facture_page,
-    analytics_page,
-    consultation_page
+    ligne_facture_page,
+    analytics_page
 ])
+
 pg.run()

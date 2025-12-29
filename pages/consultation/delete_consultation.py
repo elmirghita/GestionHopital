@@ -43,7 +43,7 @@ def render_delete_consultation():
             )
             conn.commit()
             st.success("✅ Consultation supprimée")
-            st.rerun()
+
 
     except Exception as e:
         conn.rollback()
