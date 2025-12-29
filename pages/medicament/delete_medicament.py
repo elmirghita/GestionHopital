@@ -26,15 +26,13 @@ def render_delete_medicament():
             )
             count = cursor.fetchone()[0]
 
-            if count > 0:
-                st.warning("⚠️ Ce medicament est utilisé dans des ordonnances")
-            else:
-                cursor.execute(
-                    "DELETE FROM medicament WHERE id_medicament = %s",
-                    (dep_dict[selected],)
-                )
-                conn.commit()
-                st.success("✅ Medicament supprimé")
+            
+            cursor.execute(
+                "DELETE FROM medicament WHERE id_medicament = %s",
+                (dep_dict[selected],)
+            )
+            conn.commit()
+            st.success("✅ Medicament supprimé")
 
         except Exception as e:
             st.error(f"❌ Erreur : {e}")
