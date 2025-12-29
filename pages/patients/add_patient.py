@@ -2,7 +2,7 @@
 import streamlit as st
 from pages.db import get_connection
 
-def render_add_customer():
+def render_add_patient():
     """Render the 'Add Customer' tab"""
     st.header("➕ Ajouter un nouveau Patient")
     
@@ -29,11 +29,11 @@ def render_add_customer():
                         (nom, prenom, tel, cin)
                     )
                     conn.commit()
-                    st.success(f"✅ Patient {prenom} {nom} ajouté avec succès!")
+                    st.success(f"✅ Patient {prenom} {nom} ajouté avec succès")
             except Exception as e:
                 st.error(f"❌ Erreur: {e}")
             finally:
                 if conn:
                     conn.close()
         elif submitted:
-            st.warning("⚠️ Veuillez remplir toute les champs")
+            st.warning("⚠️ Veuillez remplir tout les champs")

@@ -52,7 +52,6 @@ def render_delete_admission():
                 conn.commit()
 
                 st.success("✅ Admission supprimée avec succès")
-                st.rerun()
 
     except Exception as e:
         st.error(f"❌ Erreur : {e}")

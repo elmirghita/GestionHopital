@@ -40,8 +40,7 @@ def render_update_admission():
 
         # Nouvelle salle
         cursor.execute("""
-            SELECT num_salle, type_chambre
-            FROM salle_hospitalisation
+            SELECT * FROM salle_hospitalisation
         """)
         salles = cursor.fetchall()
 
@@ -68,7 +67,6 @@ def render_update_admission():
 
             conn.commit()
             st.success("✅ Admission mise à jour")
-            st.rerun()
 
     except Exception as e:
         st.error(f"❌ Erreur : {e}")
