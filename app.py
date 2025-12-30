@@ -23,15 +23,15 @@ pg = st.navigation([
     admission_page,
     medecin_page,
     specialite_page,
+    consultation_page,
     departement_page,
+    analytics_page,
     ordonnance_page,
     medicament_page,
     ordonnance_medical_page,
-    salle_page,
-    consultation_page,
     facture_page,
     ligne_facture_page,
-    analytics_page
+    salle_page
 ])
 
 pg.run()
